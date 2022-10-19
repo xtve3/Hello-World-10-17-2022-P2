@@ -25,7 +25,7 @@ void setup() {
     if ( appWidth != 0 && appHeight != 0 ) {
       print("Display Geoemtry is good to go.");
     } else {
-      println("lmao its broken stop");
+      println("lmao you broke it");
     }
   }
   //
