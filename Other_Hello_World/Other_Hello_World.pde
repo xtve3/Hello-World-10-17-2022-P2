@@ -3,15 +3,22 @@ int appWidth, appHeight;
 //
 void setup() {
   //Declare Display Geometry: sqaure, landscape, portrait
-fullScreen();
+  size(700,400); //Use size for debugging 
+//fullScreen(); //Use fullScreen for easy deployment 
 appWidth = width;
 appHeight = height;
+//
+//Concatenation 
+println("\t\t\tWidth="+width,"\tHeight="+height);//key variables 
+println("Display Monitor:", "\twidth="+displayWidth,"& height="+displayHeight);
+//
+//Ternary Operator 
 String  ls="Landscape or Square", p="portrait", DO="Display Orientation", instruct="Bruh, turn your phone";
 String orientation = ( width >= height ) ? ls : p; 
 println (DO, orientation); 
 //
-println("\t\t\tWidth="+width,"\tHeight="+height);//key variables 
-println("Display Monitor:", "\twidth="+displayWidth,"& height="+displayHeight);
+//If ORIENTATION is wrong ... feedback to change it
+if ( orientation==p) println("instruct"); 
 //
 //Fit CANVAS into Display Monitor
 if(width > displayWidth) appWidth = 0; //CANVAS-width will not fit
