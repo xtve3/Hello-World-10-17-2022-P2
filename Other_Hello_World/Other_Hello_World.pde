@@ -3,7 +3,7 @@ int appWidth, appHeight;
 //
 void setup() {
   //Declare Display Geometry: square, landscape, portrait
-  size(400, 2000); //Use size for debugging
+  size(700, 400); //Use size for debugging
   //fullScreen(); //Use fullScreen for easy deployment
   appWidth = width;
   appHeight = height;
