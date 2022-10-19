@@ -14,15 +14,15 @@ void setup() {
   //
   //Ternary Operator
   String ls="Landscape or Square", p="portrait", DO="Display Orientation", instruct="Bruh, turn your phone";
-  String orientation = ( width >= height ) ? ls : p;
+  String orientation = ( appWidth >= appHeight ) ? ls : p;
   println (DO, orientation);
   //
   //If ORIENTATION is wrong ... feedback to change it
   if ( orientation==p ) println(instruct);
   //
   //Fit CANVAS into Display Monitor
-  if ( width > displayWidth ) appWidth = 0; //CANVAS-width will not fit
-  if ( height > displayHeight ) appHeight = 0; //CANVAS-height will not fit
+  if ( appWidth > displayWidth ) appWidth = 0; //CANVAS-width will not fit
+  if ( appHeight > displayHeight ) appHeight = 0; //CANVAS-height will not fit
   if ( appWidth != 0 && appHeight != 0 ) print("Display Geoemtry is good to go.");
   if ( appWidth == 0 || appHeight == 0 ) println("lmao it's broken stop");
 } //End setup
