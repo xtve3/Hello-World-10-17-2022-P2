@@ -74,9 +74,17 @@ void draw() {
 } //End draw
 //
 void keyPressed() {
+  grayScale=false;
+  randomColour=false;
+  blackBackground=false;
+  if (key=='W' || key=='w')grayScale=true;
+  if (key=='A' || key=='a')randomColour=true;
+  if (key=='S' || key=='s')blackBackground=true; 
 } //End keyPressed
 //
 void mousePressed() {
+  if (mouseButton==LEFT) nightMode=false;
+  if (mouseButton==RIGHT) nightMode=true;
 } //End mousePressed
 //
 // End Main Program
