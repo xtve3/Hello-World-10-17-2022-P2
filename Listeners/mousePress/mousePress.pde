@@ -1,5 +1,5 @@
 //Global Variables
-nightMode=false;
+boolean nightMode=false;
 //
 void setup() {}//End Setup
 //
