@@ -4,14 +4,15 @@ Boolean nightMode=false;
 void setup() {}//End setup
 //
 void draw() {
-if (nightMode=true)println ("I am nocturnal.");
-if (nightMode=false)println("");
+  println("I am nocturnal.");
+  println("");
+  println("Where is the button");
 }//End draw
 //
-void keyPressed() {
-  nightMode=true;
-}//End keyPressed
+void keyPressed() {}//End keyPressed
 //
-void mousePressed() {}//End mousePressed
+void mousePressed() {
+  nightMode = true;
+}//End mousePressed
 //
 //End Main Program
