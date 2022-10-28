@@ -1,6 +1,9 @@
 //Global Variables
 int appWidth, appHeight;
-float centerwidth, centerheight, xStart, yStart, widthRect, heightRect;
+float centerWidth, centerHeight, xStart, yStart, widthRect, heightRect;
+color black=#000000, white=#FFFFFF, purple=#FA00F6, yellow=#F8FC64;
+color yellowNightMode=#F8FC00, purpleNightMode=#FA0096;
+float thick, thin;
 //
 void setup() {
   //Declare Display Geometry: square, landscape, portrait
@@ -14,7 +17,7 @@ void setup() {
   println("Display Monitor:", "\twidth="+displayWidth, "& height="+displayHeight);
   //
   //Ternary Operator
-  String ls="Landscape or Square", p="portrait", DO="Display Orientation", instruct="Bruh, turn ur phone";
+  String ls="Landscape or Square", p="portrait", DO="Display Orientation", instruct="Bruh turn ur phone";
   //String orientation = ( appWidth >= appHeight ) ? ls : p;
   //println (DO, orientation);
   if ( appWidth < appHeight ) { //Declare Landscape Mode
@@ -24,30 +27,40 @@ void setup() {
     if ( appWidth > displayWidth ) appWidth = 0; //CANVAS-width will not fit
     if ( appHeight > displayHeight ) appHeight = 0; //CANVAS-height will not fit
     if ( appWidth != 0 && appHeight != 0 ) {
-      print("Display Geoemtry is good to go.");
+      print("Display Geoemtry is Good to Go.");
     } else {
-      println("lmao you broke it");
+      println("lmao you broke it stop");
     }
   }
   //
   //If ORIENTATION is wrong ... feedback to change it
   //if ( orientation==p ) println(instruct);
+  //
   //Population
-  centerwidth = width * 1/2;
-  centerheight = height * 1/2;
-  xStart = centerwidth - (width * 1/4);
-  yStart = centerheight - (height * 1/4);
-  widthRect = width * 1/2; 
-  heightRect = height * 1/2; 
+  centerWidth = appWidth * 1/2;
+  centerHeight = appHeight * 1/2;
+  xStart = centerWidth - ( appWidth * 1/4 ) ;
+  yStart = centerHeight - ( appHeight * 1/4 ) ;;
+  widthRect = appWidth * 1/2;
+  heightRect = appHeight * 1/2;
+  thick = appWidth * 1/70;
+  thin =  appWidth * 1/140;
 } //End setup
 //
 void draw() {
-  ellipse(170, 200, 140, 140);
-  ellipse(408, 200, 140, 140);
-  ellipse(290, 125, 100, 2000);
-  rect(120, 97, 230, 230, 40);
+  background(225); //Gray Scale 0-255
+  //random(a, b)
+  background( color( random(0, 255), random(255), random(255) ) ); //color(r,g,b), Casting 
+  //Night Mode
+  background(black);
+  //
+  strokeWeight(thick); //noStroke()
+  stroke(yellow); //yellowNightMode
+  fill(purple); //purpleNightMode
   rect(xStart, yStart, widthRect, heightRect);
-  square(120, 100, 152);
+  fill(white);// Reset default
+  stroke(black);//Reset default
+  strokeWeight(1);//Reset default
 } //End draw
 //
 void keyPressed() {
