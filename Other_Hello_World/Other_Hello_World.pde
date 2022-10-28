@@ -48,19 +48,28 @@ void setup() {
 } //End setup
 //
 void draw() {
-  background(225); //Gray Scale 0-255
+  if ( grayScale == true ) background(225); //Gray Scale 0-255
   //random(a, b)
-  background( color( random(0, 255), random(255), random(255) ) ); //color(r,g,b), Casting 
+  if ( randomColour == true ) background( color( random(0, 255), random(255), random(255) ) ); //color(r,g,b), Casting 
   //Night Mode
-  background(black);
+  if ( blackBackground == true ) background(black);
   //
   strokeWeight(thick); //noStroke()
-  stroke(yellow); //yellowNightMode
-  fill(purple); //purpleNightMode
+  //Night Mode Decision
+  if ( nightMode == true )
+  {
+    stroke(yellowNightMode);
+    fill(purpleNightMode);
+  } else
+  {
+    stroke(yellow);
+    fill(purple);
+  }
   rect(xStart, yStart, widthRect, heightRect);
-  fill(white);// Reset default
-  stroke(black);//Reset default
-  strokeWeight(1);//Reset default
+  // Reset default
+  fill(white);
+  stroke(black);
+  strokeWeight(1);
 } //End draw
 //
 void keyPressed() {
