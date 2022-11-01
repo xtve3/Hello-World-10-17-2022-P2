@@ -1,10 +1,10 @@
 //Global Variables
 int appWidth, appHeight;
 float centerWidth, centerHeight, xStart, yStart, widthRect, heightRect;
-color black=#000000, white=#FFFFFF, purple=#FA00F6, yellow=#F8FC64;
-color yellowNightMode=#F8FC00, purpleNightMode=#FA0096;
+color black=#000000, white=#FFFFFF, purple=#FA00F6, yellow=#F8FC64, blue=#0000FF, green=#19FF05, red=#FF0303, orange=#FF8E03;
+color yellowNightMode=#F8FC00, purpleNightMode=#FA0096, blueNightMode=#00008B, greenNightMode=#023020, redNightMode=#980000, orangeNightMode=#A55B00;
 float thick, thin;
-Boolean grayScale=false, nightMode=false, randomColour=false, blackBackground=false; 
+Boolean grayScale=false, nightMode=false, randomColour=false, blackBackground=false, triangleNightmode=false, squareNightmode=false; 
 //
 void setup() {
   //Declare Display Geometry: square, landscape, portrait
@@ -68,6 +68,24 @@ void draw() {
   }
   rect(xStart, yStart, widthRect, heightRect);
   // Reset default
+  if (triangleNightmode == true) {
+    fill(blue);
+    stroke(green);
+  } else {
+    fill(blueNightMode);
+    stroke(greenNightMode);
+  }
+  triangle(25,125,50,250,150,100);
+  // Reset default
+  if (squareNightmode == true) {
+  fill(red);
+  stroke(orange);
+  } else {
+  fill(redNightMode);
+  stroke(orangeNightMode);
+  }
+  square(535,150,150);
+  // Reset default
   fill(white);
   stroke(black);
   strokeWeight(1);
@@ -80,6 +98,10 @@ void keyPressed() {
   if (key=='W' || key=='w')grayScale=true;
   if (key=='A' || key=='a')randomColour=true;
   if (key=='S' || key=='s')blackBackground=true; 
+  if (key=='D')triangleNightmode=true;
+  if (key=='d')triangleNightmode=false;
+  if (key=='R')squareNightmode=true;
+  if (key=='r')squareNightmode=false;
 } //End keyPressed
 //
 void mousePressed() {
